@@ -11,6 +11,7 @@ from tastypie import fields
 from datetime import datetime
 from django.utils import timezone
 from django.db import connection, transaction, DatabaseError, IntegrityError
+from tastypie.cache import SimpleCache
 import time
 from app.app.models.models import City
 import json
@@ -32,4 +33,5 @@ class BranchAppResource(ModelResource):
             "branch_name":('exact', 'startswith','istartswith','icontains',),
             "cid":ALL,
         }
+        cache = SimpleCache(timeout=60*60*24)
 
