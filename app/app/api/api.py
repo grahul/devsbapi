@@ -26,8 +26,7 @@ class BranchAppResource(ModelResource):
         queryset = City.objects.all()
         resource_name = 'appbranch'
         authorization = Authorization()
-
-        limit = 0 #(unlimted)
+        # limit = 0 #(unlimted)
         filtering = {
             "branch_flag": ALL,
             "branch_name":('exact', 'startswith','istartswith','icontains',),
