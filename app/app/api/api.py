@@ -13,7 +13,7 @@ from django.utils import timezone
 from django.db import connection, transaction, DatabaseError, IntegrityError
 from tastypie.cache import SimpleCache
 import time
-from app.app.models.models import City
+from app.app.models.models import City,Sbpics
 import json
 import hmac
 import base64,hashlib,urllib2
@@ -33,4 +33,20 @@ class BranchAppResource(ModelResource):
             "cid":ALL,
         }
         cache = SimpleCache(timeout=60*60*24)
+
+
+class PicsResource(ModelResource):
+    class Meta:
+        collection_name="data"
+        queryset = Sbpics.objects.all()
+        resource_name = 'pics'
+        authorization = Authorization()
+        # limit = 0 #(unlimted)
+        # filtering = {
+        #     "branch_flag": ALL,
+        #     "branch_name":('exact', 'startswith','istartswith','icontains',),
+        #     "cid":ALL,
+        # }
+        cache = SimpleCache(timeout=60*60*24)
+
 

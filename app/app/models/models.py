@@ -612,3 +612,12 @@ class Users(models.Model):
     class Meta:
         managed = False
         db_table = 'users'
+
+
+class Sbpics(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50)
+    url = models.CharField(max_length=50)
+    size = models.CharField(max_length=20)
+    class Meta:
+        db_table = 'sbpics'
