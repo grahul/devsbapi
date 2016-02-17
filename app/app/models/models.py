@@ -621,3 +621,14 @@ class Sbpics(models.Model):
     size = models.CharField(max_length=20)
     class Meta:
         db_table = 'sbpics'
+
+class Sbimage(models.Model):
+    id = models.AutoField(primary_key=True)
+    url = models.CharField(max_length=67, blank=True, null=True)
+    image_path = models.CharField(max_length=116, blank=True, null=True)
+    name = models.CharField(max_length=34, blank=True, null=True)
+    view = models.CharField(max_length=4, blank=True, null=True)
+
+    class Meta:
+        managed = False
+        db_table = 'sbimage'
