@@ -56,11 +56,11 @@ class SbimageResource(ModelResource):
         resource_name = 'sbimage'
         authorization = Authorization()
         # limit = 0 #(unlimted)
-        # filtering = {
-        #     "branch_flag": ALL,
-        #     "branch_name":('exact', 'startswith','istartswith','icontains',),
-        #     "cid":ALL,
-        # }
+        filtering = {
+            "id": ALL,
+            "name":('exact', 'startswith','istartswith','icontains',),
+            "cid":ALL,
+        }
         cache = SimpleCache(timeout=60*60*24)
 
 
