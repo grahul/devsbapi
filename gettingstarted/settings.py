@@ -128,37 +128,37 @@ CACHES = {
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_69f818841ff5dd1',
-        'USER': 'b7d2bc28020b2d',
-        'PASSWORD': '4e843a73',
-        'HOST': 'us-cdbr-iron-east-03.cleardb.net',
-        'PORT': '',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'heroku_69f818841ff5dd1',
+#         'USER': 'b7d2bc28020b2d',
+#         'PASSWORD': '4e843a73',
+#         'HOST': 'us-cdbr-iron-east-03.cleardb.net',
+#         'PORT': '',
+#     }
+# }
 TASTYPIE_DEFAULT_FORMATS = ['json',]
 TASTYPIE_CANNED_ERROR = "Oops, we broke it!"
-API_LIMIT_PER_PAGE = 50
-API_LIMIT_PER_PAGE = 0 # no limit
+API_LIMIT_PER_PAGE = 20
+# API_LIMIT_PER_PAGE = 0 # no limit
 TASTYPIE_FULL_DEBUG = True
 TASTYPIE_ALLOW_MISSING_SLASH = True
 # sql2.freemysqlhosting.net
 
 
 # LOCAL DB
-# DATABASES = {
+DATABASES = {
 
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'hire22',
-#         'USER': 'root',
-#         'PASSWORD': 'root',
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',
-#     }
-# }
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'sbdb',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+    }
+}
 # Password validation
 # https://docs.djangoproject.com/en/1.9/ref/settings/#auth-password-validators
 
