@@ -631,4 +631,4 @@ class Sbimage(models.Model):
 
     class Meta:
         managed = False
-        db_table = 'sbimage'
+        db_table = 'sbpics'

@@ -14,13 +14,17 @@ from django.db import connection, transaction, DatabaseError, IntegrityError
 from tastypie.cache import SimpleCache
 import time
 from app.app.models.models import City,Sbpics,Sbimage
+from app.app.models.MyModelResource import MyModelResource
 import json
 import hmac
 import base64,hashlib,urllib2
 import smtplib
 from django.conf import settings
+import smtplib
+from tastypie.serializers import Serializer
 
-class BranchAppResource(ModelResource):
+
+class BranchAppResource(MyModelResource):
     class Meta:
         collection_name="data"
         queryset = City.objects.all()
@@ -32,7 +36,9 @@ class BranchAppResource(ModelResource):
             "branch_name":('exact', 'startswith','istartswith','icontains',),
             "cid":ALL,
         }
-        cache = SimpleCache(timeout=60*60*24)
+        serializer = Serializer()
+
+        # cache = SimpleCache(timeout=60*60*24)
 
 
 class PicsResource(ModelResource):

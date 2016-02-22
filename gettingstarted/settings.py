@@ -116,18 +116,28 @@ CACHES = {
 # }
 
 
-DATABASES = {
+# DATABASES = {
 
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'sql2106595',
+#         'USER': 'sql2106595',
+#         'PASSWORD': 'xM7*bD8*',
+#         'HOST': 'sql2.freemysqlhosting.net',
+#         'PORT': '3306',
+#     }
+# }
+
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sql2106595',
-        'USER': 'sql2106595',
-        'PASSWORD': 'xM7*bD8*',
-        'HOST': 'sql2.freemysqlhosting.net',
-        'PORT': '3306',
+        'NAME': 'heroku_69f818841ff5dd1',
+        'USER': 'b7d2bc28020b2d',
+        'PASSWORD': '4e843a73',
+        'HOST': 'us-cdbr-iron-east-03.cleardb.net',
+        'PORT': '',
     }
 }
-
 TASTYPIE_DEFAULT_FORMATS = ['json',]
 TASTYPIE_CANNED_ERROR = "Oops, we broke it!"
 API_LIMIT_PER_PAGE = 50
